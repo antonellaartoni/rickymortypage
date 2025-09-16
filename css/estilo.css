@@ -1,0 +1,1018 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+/* --- Reset Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crete Round', serif;
+    line-height: 1.6;
+    cursor: url('../img/puntero1.png'), auto;
+    /* CSS Variables for colors */
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg-color: #ffffff;
+    --header-border-color: #e0e0e0;
+    --logo-color: #2c3e50;
+    --nav-link-hover-color: #1abc9c;
+    --footer-bg-color: #2c3e50;
+    --footer-text-color: #ecf0f1;
+    --social-icon-color: #ecf0e0;
+    --social-icon-hover-color: #1abc9c;
+    --h1-color: #2c3e50;
+    --subtitle-color: #bdc3c7;
+    --season-block-bg: #fff;
+    --season-block-shadow: rgba(0,0,0,0.08);
+    --episode-border-color: #f0f0f0;
+    --episode-hover-bg: #f9f9f9;
+    --form-bg: #fff;
+    --form-shadow: rgba(0,0,0,0.08);
+    --form-label-color: #34495e;
+    --form-input-bg: #fff;
+    --form-input-color: #333;
+    --form-input-border: #ccc;
+    --character-card-bg: #fff;
+    --character-card-shadow: rgba(0,0,0,0.1);
+    --character-card-hover-shadow: rgba(0,0,0,0.15);
+    --character-card-hover-shadow-light: rgba(0,0,0,0.15);
+    --character-card-h2-color: #2c3e50;
+    --character-card-p-color: #7f8c8d;
+    --lightbox-bg: #fff;
+    --lightbox-text-color: #333;
+    --lightbox-h3-color: #2c3e50;
+    --dark-mode-moon-color: #2c3e50;
+    --dark-mode-switch-bg: #ccc;
+    --dark-mode-switch-checked-bg: #1abc9c;
+    --dark-mode-switch-handle-color: white;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg-color: #2c2c2c;
+    --header-border-color: #444;
+    --logo-color: #e0e0e0;
+    --nav-link-hover-color: #1abc9c;
+    --footer-bg-color: #2c2c2c;
+    --footer-text-color: #e0e0e0;
+    --social-icon-color: #e0e0e0;
+    --social-icon-hover-color: #1abc9c;
+    --h1-color: #e0e0e0;
+    --subtitle-color: #aaa;
+    --season-block-bg: #2c2c2c;
+    --season-block-shadow: rgba(0,0,0,0.5);
+    --episode-border-color: #444;
+    --episode-hover-bg: #333;
+    --form-bg: #2c2c2c;
+    --form-shadow: rgba(0,0,0,0.5);
+    --form-label-color: #e0e0e0;
+    --form-input-bg: #333;
+    --form-input-color: #e0e0e0;
+    --form-input-border: #555;
+    --character-card-bg: #2c2c2c;
+    --character-card-shadow: rgba(0,0,0,0.5);
+    --character-card-hover-shadow: rgba(0,0,0,0.6);
+    --character-card-h2-color: #e0e0e0;
+    --character-card-p-color: #aaa;
+    --lightbox-bg: #2c2c2c;
+    --lightbox-text-color: #e0e0e0;
+    --lightbox-h3-color: #e0e0e0;
+    --dark-mode-moon-color: #e0e0e0;
+    --dark-mode-switch-bg: #1abc9c;
+    --dark-mode-switch-checked-bg: #1abc9c;
+    --dark-mode-switch-handle-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    padding: 2rem 4rem;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: #bdc3c7;
+}
+
+/* --- Cabecera (Header) --- */
+.header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    position: relative;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.logo img {
+    height: 120px; /* Altura del logo */
+    width: auto;
+    vertical-align: middle;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #1abc9c;
+    border-bottom-color: #1abc9c;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- Contenido Principal (Main) --- */
+.main-content {
+    padding: 3rem 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.column {
+    flex: 1;
+}
+
+.column-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.column-text p {
+    margin-bottom: 1rem;
+}
+
+.column-img img {
+    max-width: 100%;
+    margin: 0 auto;
+    animation: slideInFromRight 1s ease-in-out;
+}
+
+/* --- Pie de Página (Footer) --- */
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    display: flex; /* To align icon and text */
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.social-icons a i {
+    margin-right: 0.5rem; /* Space between icon and text */
+    font-size: 1.5rem; /* Larger icon size */
+}
+
+.social-icons a:hover {
+    color: #1abc9c;
+}
+
+/* --- Diseño Responsivo (Responsive) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1.5rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* --- Página de Personajes y Galería --- */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    width: 220px; /* Polaroid width */
+    height: 270px; /* Increased Polaroid height */
+    margin: 1rem;
+    cursor: pointer;
+    background-color: #fff; /* White background for polaroid frame */
+    padding: 10px 10px 30px 10px; /* Padding for polaroid frame, more at bottom */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* No border-radius for sharp edges */
+}
+
+.gallery-item .image-container {
+    width: 100%;
+    height: calc(100% - 20px); /* Adjust height to account for bottom padding */
+    border-radius: 0; /* Rectangular images */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--character-card-hover-shadow-light);
+}
+
+body.dark-mode .gallery-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger hover shadow for dark mode */
+}
+
+/* Scattered effect */
+.gallery-item:nth-child(4n+1) {
+    transform: rotate(-6deg);
+}
+.gallery-item:nth-child(4n+2) {
+    transform: rotate(4deg);
+    margin-top: 2rem;
+}
+.gallery-item:nth-child(4n+3) {
+    transform: rotate(-2deg);
+    margin-top: -1rem;
+}
+.gallery-item:nth-child(4n+4) {
+    transform: rotate(3deg);
+    margin-top: 3rem;
+}
+
+/* --- Lightbox --- */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2000;
+}
+
+#lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    display: flex;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 80vw;
+    max-height: 80vh;
+    position: relative;
+}
+
+.lightbox-img {
+    flex: 1;
+    max-width: 50%;
+}
+
+.lightbox-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.lightbox-description {
+    flex: 1;
+    max-width: 50%;
+    overflow-y: auto;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.dark-mode .lightbox-content {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.lightbox-description h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.dark-mode .lightbox-description h3 {
+    color: #e0e0e0;
+}
+
+/* --- Página de Temporadas --- */
+.season-block {
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.season-block h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.episode-list li {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.episode-list li:last-child {
+    border-bottom: none;
+}
+
+.episode-list li:hover {
+    background-color: #f9f9f9;
+}
+
+.episode-list li span {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 4px;
+}
+
+/* --- Página de Contacto --- */
+.contact-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Crete Round', serif;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #16a085;
+}
+
+/* Netflix Link */
+.netflix-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem; /* Reduced padding */
+    color: #2c3e50; /* Primary text color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.netflix-link:hover {
+    color: #1abc9c; /* Hover color from existing palette */
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .header {
+    background-color: #2c2c2c;
+    border-bottom-color: #444;
+}
+
+.dark-mode .logo a {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-list a {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-list a:hover {
+    color: #1abc9c;
+    border-bottom-color: #1abc9c;
+}
+
+.dark-mode .column-text h1 {
+    color: #e0e0e0;
+}
+
+.dark-mode .footer {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.dark-mode .social-icons a {
+    color: #e0e0e0;
+}
+
+.dark-mode .social-icons a:hover {
+    color: #1abc9c;
+}
+
+.dark-mode .season-block {
+    background-color: #2c2c2c;
+}
+
+.dark-mode .season-block h2 {
+    color: #e0e0e0;
+    border-bottom-color: #1abc9c;
+}
+
+.dark-mode .episode-list li {
+    border-bottom-color: #444;
+}
+
+.dark-mode .episode-list li:hover {
+    background-color: #333;
+}
+
+.dark-mode .contact-form {
+    background-color: #2c2c2c;
+}
+
+.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+.dark-mode .character-card, .dark-mode .gallery-item {
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .character-card h2 {
+    color: #e0e0e0;
+}
+
+.dark-mode .netflix-link {
+    color: #e0e0e0;
+}
+
+.dark-mode .netflix-link:hover {
+    color: #1abc9c;
+}
+
+/* --- Dark Mode Switch --- */
+.dark-mode-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 2rem;
+}
+
+.dark-mode-container .fa-moon {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.dark-mode .dark-mode-container .fa-moon {
+    color: #e0e0e0;
+}
+
+.dark-mode-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.dark-mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.dark-mode-switch label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.dark-mode-switch label:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.dark-mode-switch input:checked + label {
+    background-color: #1abc9c;
+}
+
+.dark-mode-switch input:checked + label:before {
+    transform: translateX(22px);
+}
+
+/* --- Contact Page Layout --- */
+.contact-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.contact-form-container {
+    flex: 1;
+}
+
+.map-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.btn-location {
+    display: block;
+    width: auto;
+    padding: 0.5rem 1rem;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-location:hover {
+    background-color: #16a085;
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+.dark-mode .container h1 {
+    color: #e0e0e0;
+}
+
+.dark-mode .subtitle {
+    color: #aaa;
+}
+
+/* --- Form Validation --- */
+.form-group .required {
+    color: #e74c3c;
+    margin-left: 0.25rem;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none; /* Hidden by default */
+}
+
+/* --- Success Message --- */
+#success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 1.5rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 1000;
+}
+
+#success-message.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* --- Gallery Hover Effect --- */
+.gallery-item {
+    position: relative;
+    overflow: hidden; /* To keep the overlay and zoomed image contained */
+}
+
+.gallery-item img {
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+/* Polaroid Caption Styles */
+.polaroid-caption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9em; /* Increased font size */
+    color: #333; /* Dark text for light mode */
+}
+
+body.dark-mode .polaroid-caption {
+    color: #e0e0e0; /* Light text for dark mode */
+}
+
+/* --- Character Card Styles --- */
+.character-card {
+    background-color: var(--character-card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--character-card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    width: 180px;
+    height: 280px;
+    text-align: center;
+    position: relative; /* For positioning the status indicator */
+    overflow: hidden; /* Ensures content stays within bounds */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    justify-content: space-between;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.character-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+}
+
+.character-card .card-info h2 {
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.character-card .card-info p {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-bottom: 0.2rem;
+}
+
+/* Status border for character images */
+.character-card.status-alive img {
+    border: 3px solid #2ecc71; /* Green border for alive */
+}
+
+.character-card.status-dead img {
+    border: 3px solid #e74c3c; /* Red border for dead */
+}
+
+.character-card.status-unknown img {
+    border: 3px solid #95a5a6; /* Grey border for unknown */
+}
+
+
+
+
+
+
+/* Dark mode adjustments for character cards */
+.dark-mode .character-card {
+    background-color: #2c2c2c; /* Explicitly set to dark color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.dark-mode .character-card .card-info h2 {
+    color: #e0e0e0;
+}
+
+.dark-mode .character-card .card-info p {
+    color: #aaa;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#transition-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(221,204,255,1) 50%, rgba(188,158,255,1) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10000;
+}
+
+#transition-overlay.visible {
+    opacity: 1;
+}
+
+#splash-screen.fade-out {
+    opacity: 0;
+}
+
+#splash-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 9998;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--header-bg-color); /* Use header background color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999; /* Increased z-index */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures rounded corners apply to children */
+    top: 100%; /* Position below the dropdown button */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-color); /* Use general text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: none; /* Remove border from nav-list a */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--nav-link-hover-color); /* Use nav link hover color */
+    color: #fff; /* White text on hover for better contrast */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    /* Inherit styles from nav-list a */
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    display: flex; /* To align text and icon */
+    align-items: center;
+    gap: 5px; /* Space between text and icon */
+}
+
+.dropbtn:hover {
+    color: var(--nav-link-hover-color);
+    border-bottom-color: var(--nav-link-hover-color);
+}
+
+/* Dark mode adjustments for dropdown */
+body.dark-mode .dropdown-content {
+    background-color: var(--header-bg-color); /* Darker background for dropdown in dark mode */
+}
+
+body.dark-mode .dropdown-content a {
+    color: var(--text-color); /* Light text for dark mode */
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: var(--nav-link-hover-color);
+    color: #fff;
+}

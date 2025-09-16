@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick y Morty - Galería</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo_rym.png" alt="Logo Rick y Morty"></a>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="temporadas.html">Temporadas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="personajes.html">Personajes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            &#9776;
+        </button>
+    </header>
+
+    <div class="dark-mode-container">
+        <i class="fas fa-moon"></i>
+        <div class="dark-mode-switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <label for="dark-mode-toggle"></label>
+        </div>
+    </div>
+
+    <main class="container">
+        <h1>Galería de Imágenes</h1>
+        <p class="subtitle">Una colección de momentos e ilustraciones del multiverso.</p>
+        <div class="gallery-container">
+            <div class="gallery-item" data-title="Temporada 3, Episodio 2: 'Rickmancing the Stone'" data-description="Rick y Morty están haciendo un gesto obsceno con el dedo del medio. Este momento refleja el carácter irreverente y transgresor de la serie, desafiando las convenciones y mostrando su actitud 'punk'.">
+                <div class="image-container">
+                    <img src="img/rym2.jpg" alt="Imagen de la galería 1">
+                </div>
+                <div class="polaroid-caption">
+                    <p>Temporada 3, Episodio 2: 'Rickmancing the Stone'</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Temporada 1, Episodio 3: 'Anatomy Park'" data-description="Plano general del parque temático llamado Anatomy Park, construido dentro del cuerpo de una persona sin hogar. Es una referencia a la película Jurassic Park y un claro ejemplo de la creatividad y el humor negro de la serie.">
+                <div class="image-container">
+                    <img src="img/rym3.png" alt="Imagen de la galería 2">
+                </div>
+                <div class="polaroid-caption">
+                    <p>Temporada 1, Episodio 3: 'Anatomy Park'</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Temporada 2, Episodio 7: 'Big Trouble in Little Sanchez'" data-description="Esta escena muestra a Rick transformado en una pierna con una cara en la rodilla, mientras Morty lo mira con una expresión de total desinterés. Es un ejemplo perfecto del humor absurdo y las transformaciones corporales extremas que son comunes en la serie.">
+                <div class="image-container">
+                    <img src="img/rym4.jpeg" alt="Imagen de la galería 3">
+                </div>
+                <div class="polaroid-caption">
+                    <p>Temporada 2, Episodio 7: 'Big Trouble in Little Sanchez'</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Temporada 3, Episodio 10: 'The Rickchurian Mortydate'" data-description="La familia Smith, incluyendo a Rick, Morty, Summer y Beth, se preparan con armas futuristas. Esta escena representa el momento en que la familia se une para una misión interdimensional, mostrando cómo Beth y Summer se han vuelto más competentes en las aventuras de Rick.">
+                <div class="image-container">
+                    <img src="img/rym5.jpg" alt="Imagen de la galería 4">
+                </div>
+                <div class="polaroid-caption">
+                    <p>Temporada 3, Episodio 10: 'The Rickchurian Mortydate'</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Temporada 1, Episodio 10: 'Close Rick-counters of the Rick Kind'" data-description="Rick le está abriendo los ojos a Morty de forma forzada para que observe el mundo a su alrededor. Es una escena icónica que muestra la dinámica disfuncional de su relación, donde Rick a menudo somete a Morty a situaciones traumáticas o bizarras.">
+                <div class="image-container">
+                    <img src="img/rym6.jpg" alt="Imagen de la galería 5">
+                </div>
+                <div class="polaroid-caption">
+                    <p>Temporada 1, Episodio 10: 'Close Rick-counters of the Rick Kind'</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Temporada 1, Episodio 4: 'M. Night Shaym-Aliens!'" data-description="Rick está realizando una lobotomía con fórceps en sí mismo, rodeado por espejos y su familia. Esta escena dramática y surrealista es un ejemplo del tipo de experimentos científicos extremos que Rick lleva a cabo en su garaje.">
+                <div class="image-container">
+                    <img src="img/rym7.jpg" alt="Imagen de la galería 6">
+                </div>
+                <div class="polaroid-caption">
+                    <p>Temporada 1, Episodio 4: 'M. Night Shaym-Aliens!'</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <div class="lightbox-img">
+                <img id="lightbox-img" src="" alt="Imagen ampliada">
+            </div>
+            <div class="lightbox-description">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description-p"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rick y Morty Fan Site. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="https://x.com/RickandMorty?" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/rickandmorty/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/RickandMorty/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.reddit.com/r/rickandmorty/" target="_blank"><i class="fab fa-reddit-alien"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/galeria.js"></script>
+</body>
+</html>

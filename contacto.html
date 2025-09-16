@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick y Morty - Contacto</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo_rym.png" alt="Logo Rick y Morty"></a>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="temporadas.html">Temporadas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="personajes.html">Personajes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            &#9776;
+        </button>
+    </header>
+
+    <div class="dark-mode-container">
+        <i class="fas fa-moon"></i>
+        <div class="dark-mode-switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <label for="dark-mode-toggle"></label>
+        </div>
+    </div>
+
+    <main class="container">
+        <h1>Formulario de Contacto</h1>
+        <p class="subtitle">¿Tienes alguna pregunta, sugerencia o teoría loca sobre la serie? ¡Compártela con nosotros!</p>
+        
+        <div class="contact-container">
+            <div class="contact-form-container">
+                <form class="contact-form" action="#" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nombre<span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje<span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+            <div class="map-container">
+                <div id="map"></div>
+                <button id="get-location" class="btn-location">📍 Mi ubicación actual</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="success-message">Formulario enviado con éxito</div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rick y Morty Fan Site. Todos los derechos reserved.</p>
+        <div class="social-icons">
+            <a href="https://x.com/RickandMorty?" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/rickandmorty/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/RickandMorty/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.reddit.com/r/rickandmorty/" target="_blank"><i class="fab fa-reddit-alien"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/contacto.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+</body>
+</html>

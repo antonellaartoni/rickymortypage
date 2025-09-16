@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick y Morty - Inicio</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div id="splash-screen">
+        <div id="transition-overlay"></div>
+        <img src="img/rym8.gif" alt="Cargando...">
+    </div>
+    <div id="main-container" class="hidden">
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo_rym.png" alt="Logo Rick y Morty"></a>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropbtn">Temporadas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0);" data-season="1">Temporada 1</a>
+                        <a href="javascript:void(0);" data-season="2">Temporada 2</a>
+                        <a href="javascript:void(0);" data-season="3">Temporada 3</a>
+                        <a href="javascript:void(0);" data-season="4">Temporada 4</a>
+                        <a href="javascript:void(0);" data-season="5">Temporada 5</a>
+                        <a href="javascript:void(0);" data-season="6">Temporada 6</a>
+                        <a href="javascript:void(0);" data-season="7">Temporada 7</a>
+                    </div>
+                </li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropbtn">Personajes <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="personajes.html?status=all" data-status="all">Todos</a>
+                        <a href="personajes.html?status=alive" data-status="alive">Vivos</a>
+                        <a href="personajes.html?status=dead" data-status="dead">Muertos</a>
+                        <a href="personajes.html?status=unknown" data-status="unknown">Desconocidos</a>
+                    </div>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            &#9776;
+        </button>
+    </header>
+
+    <div class="dark-mode-container">
+        <i class="fas fa-moon"></i>
+        <div class="dark-mode-switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <label for="dark-mode-toggle"></label>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="column column-text">
+            <h1>El Increíble Multiverso de Rick y Morty</h1>
+            <p>
+                Sumérgete en las caóticas y alucinantes aventuras de Rick Sánchez, el científico más brillante y desquiciado del universo, y su nieto Morty Smith, un adolescente tímido y bienintencionado. Juntos, viajan a través de dimensiones infinitas, explorando planetas extraños, conociendo formas de vida bizarras y, muy a menudo, poniendo en peligro la existencia misma de la realidad.
+            </p>
+            <p>
+                La serie combina humor negro, ciencia ficción compleja y una profunda exploración de temas existenciales. Cada episodio es una nueva oportunidad para cuestionar la moralidad, el libre albedrío y el significado de la vida, todo mientras esquivas láseres, negocias con seres intergalácticos y tratas de no ser borrado de la existencia por alguna de las creaciones fallidas de Rick.
+            </p>
+            <p>
+                <strong>Prepárate para una dosis de locura cósmica</strong>, donde los eructos de Rick son tan importantes como sus ecuaciones y la supervivencia de Morty depende de su capacidad para seguir instrucciones (o ignorarlas en el momento justo). ¡Wubba Lubba Dub Dub!
+            </p>
+            
+        </section>
+        <section class="column column-img">
+            <img src="img/rym_portal.png" alt="Imagen representativa de Rick y Morty">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rick y Morty Fan Site. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="https://x.com/RickandMorty?" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/rickandmorty/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/RickandMorty/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.reddit.com/r/rickandmorty/" target="_blank"><i class="fab fa-reddit-alien"></i></a>
+        </div>
+    </footer>
+
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
