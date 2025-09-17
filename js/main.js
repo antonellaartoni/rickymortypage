@@ -67,20 +67,38 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.cursor = "url('../img/puntero1.png'), auto";
     });
 
-    // Dropdown functionality for click (especially for mobile)
+    // Dropdown functionality for click
     const dropbtns = document.querySelectorAll('.dropbtn');
 
     dropbtns.forEach(btn => {
         btn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
+            event.preventDefault();
+            event.stopPropagation();
             const dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === 'block') {
-                dropdownContent.style.display = 'none';
-            } else {
-                dropdownContent.style.display = 'block';
-            }
+
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown-content.show').forEach(openDropdown => {
+                if (openDropdown !== dropdownContent) {
+                    openDropdown.classList.remove('show');
+                }
+            });
+
+            dropdownContent.classList.toggle('show');
         });
     });
+
+    // Close all dropdowns if the user clicks outside of them
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 
     // Handle clicks on season links
     const seasonLinks = document.querySelectorAll('.dropdown-content a[data-season]');
