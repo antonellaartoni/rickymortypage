@@ -721,6 +721,12 @@ body.dark-mode {
     .contact-container {
         flex-direction: column;
     }
+
+    .contact-form-container,
+    .map-container {
+        flex: none;
+        width: 100%;
+    }
 }
 
 .dark-mode .container h1 {
