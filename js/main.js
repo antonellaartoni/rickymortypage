@@ -1,22 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const splashScreen = document.getElementById('splash-screen');
-    const mainContainer = document.getElementById('main-container');
-
-    const transitionOverlay = document.getElementById('transition-overlay');
-
-    setTimeout(() => {
-        if (transitionOverlay) {
-            transitionOverlay.classList.add('visible');
-        }
-        setTimeout(() => {
-            if (splashScreen) {
-                splashScreen.style.display = 'none';
-            }
-            if (mainContainer) {
-                mainContainer.classList.remove('hidden');
-            }
-        }, 500); // Coincide con la duración de la transición en CSS
-    }, 9200); // 5.5 segundos
 
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav');
