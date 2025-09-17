@@ -1016,3 +1016,29 @@ body.dark-mode .dropdown-content a:hover {
     background-color: var(--nav-link-hover-color);
     color: #fff;
 }
+
+/* --- Scroll-to-Top Button --- */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1abc9c;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #16a085;
+}
+
+.scroll-to-top-btn.show {
+    display: block;
+}

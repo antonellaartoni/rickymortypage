@@ -101,4 +101,25 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = `personajes.html?status=${status}`;
         });
     });
+
+    // Scroll-to-top button functionality
+    const scrollToTopBtn = document.querySelector('.scroll-to-top-btn');
+
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
