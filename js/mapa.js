@@ -16,39 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
         .bindPopup('Parque Universal de Rick y Morty')
         .openPopup();
 
-    let userMarker = null;
-
-    const locationButton = document.getElementById('get-location');
-    locationButton.addEventListener('click', () => {
-        if (confirm("¿Deseas compartir tu ubicación?")) {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    const userCoords = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                    };
-
-                    // Limpiar marcadores anteriores
-                    if (initialMarker) {
-                        map.removeLayer(initialMarker);
-                        initialMarker = null;
-                    }
-                    if (userMarker) {
-                        map.removeLayer(userMarker);
-                    }
-
-                    map.setView([userCoords.lat, userCoords.lng], 15);
-
-                    // Crear nuevo marcador para el usuario
-                    userMarker = L.marker([userCoords.lat, userCoords.lng]).addTo(map)
-                        .bindPopup('Tu ubicación actual')
-                        .openPopup();
-                }, () => {
-                    alert('No se pudo obtener tu ubicación.');
-                });
-            } else {
-                alert('La geolocalización no es soportada por este navegador.');
-            }
-        }
-    });
+    
 });
