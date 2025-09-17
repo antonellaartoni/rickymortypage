@@ -7,15 +7,17 @@ function initMap() {
 
     const map = new google.maps.Map(mapDiv, {
         center: initialCoords,
-        zoom: 15, // Aumentado el zoom para ver mejor la ubicación
+        zoom: 15,
     });
 
     // Marcador para el Parque Universal
-    new google.maps.Marker({
+    let initialMarker = new google.maps.Marker({
         position: initialCoords,
         map: map,
         title: 'Parque Universal de Rick y Morty',
     });
+
+    let userMarker = null;
 
     const locationButton = document.getElementById('get-location');
     locationButton.addEventListener('click', () => {
@@ -26,9 +28,21 @@ function initMap() {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
                     };
+
+                    // Limpiar marcadores anteriores
+                    if (initialMarker) {
+                        initialMarker.setMap(null);
+                        initialMarker = null;
+                    }
+                    if (userMarker) {
+                        userMarker.setMap(null);
+                    }
+
                     map.setCenter(userCoords);
                     map.setZoom(15);
-                    new google.maps.Marker({
+
+                    // Crear nuevo marcador para el usuario
+                    userMarker = new google.maps.Marker({
                         position: userCoords,
                         map: map,
                         title: 'Tu ubicación actual',
