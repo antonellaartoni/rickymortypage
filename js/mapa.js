@@ -1,21 +1,20 @@
-function initMap() {
+document.addEventListener('DOMContentLoaded', () => {
     const mapDiv = document.getElementById('map');
     if (!mapDiv) return;
 
     // Coordenadas del Parque Universal de Rick y Morty (Universal Studios Hollywood)
     const initialCoords = { lat: 34.138088, lng: -118.353470 };
 
-    const map = new google.maps.Map(mapDiv, {
-        center: initialCoords,
-        zoom: 15,
-    });
+    const map = L.map(mapDiv).setView([initialCoords.lat, initialCoords.lng], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
     // Marcador para el Parque Universal
-    let initialMarker = new google.maps.Marker({
-        position: initialCoords,
-        map: map,
-        title: 'Parque Universal de Rick y Morty',
-    });
+    let initialMarker = L.marker([initialCoords.lat, initialCoords.lng]).addTo(map)
+        .bindPopup('Parque Universal de Rick y Morty')
+        .openPopup();
 
     let userMarker = null;
 
@@ -31,22 +30,19 @@ function initMap() {
 
                     // Limpiar marcadores anteriores
                     if (initialMarker) {
-                        initialMarker.setMap(null);
+                        map.removeLayer(initialMarker);
                         initialMarker = null;
                     }
                     if (userMarker) {
-                        userMarker.setMap(null);
+                        map.removeLayer(userMarker);
                     }
 
-                    map.setCenter(userCoords);
-                    map.setZoom(15);
+                    map.setView([userCoords.lat, userCoords.lng], 15);
 
                     // Crear nuevo marcador para el usuario
-                    userMarker = new google.maps.Marker({
-                        position: userCoords,
-                        map: map,
-                        title: 'Tu ubicación actual',
-                    });
+                    userMarker = L.marker([userCoords.lat, userCoords.lng]).addTo(map)
+                        .bindPopup('Tu ubicación actual')
+                        .openPopup();
                 }, () => {
                     alert('No se pudo obtener tu ubicación.');
                 });
@@ -55,4 +51,4 @@ function initMap() {
             }
         }
     });
-}
+});
