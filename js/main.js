@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
         });
     }
 
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (scrollToTopBtn) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+            if (window.pageYOffset > 100) { // Show button after scrolling 100px
                 scrollToTopBtn.classList.add('show');
             } else {
                 scrollToTopBtn.classList.remove('show');
