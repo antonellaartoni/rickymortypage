@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const mapDiv = document.getElementById('map');
     if (!mapDiv) return;
 
