@@ -12,24 +12,26 @@ function initMap() {
 
     const locationButton = document.getElementById('get-location');
     locationButton.addEventListener('click', () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const userCoords = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
-                map.setCenter(userCoords);
-                map.setZoom(15);
-                new google.maps.Marker({
-                    position: userCoords,
-                    map: map,
-                    title: 'Tu ubicación actual',
+        if (confirm("¿Deseas compartir tu ubicación?")) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const userCoords = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+                    map.setCenter(userCoords);
+                    map.setZoom(15);
+                    new google.maps.Marker({
+                        position: userCoords,
+                        map: map,
+                        title: 'Tu ubicación actual',
+                    });
+                }, () => {
+                    alert('No se pudo obtener tu ubicación.');
                 });
-            }, () => {
-                alert('No se pudo obtener tu ubicación.');
-            });
-        } else {
-            alert('La geolocalización no es soportada por este navegador.');
+            } else {
+                alert('La geolocalización no es soportada por este navegador.');
+            }
         }
     });
 }
