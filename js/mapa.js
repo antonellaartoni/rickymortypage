@@ -2,12 +2,19 @@ function initMap() {
     const mapDiv = document.getElementById('map');
     if (!mapDiv) return;
 
-    // Coordenadas iniciales (por ejemplo, un punto central genérico)
-    const initialCoords = { lat: 40.416775, lng: -3.703790 };
+    // Coordenadas del Parque Universal de Rick y Morty (Universal Studios Hollywood)
+    const initialCoords = { lat: 34.138088, lng: -118.353470 };
 
     const map = new google.maps.Map(mapDiv, {
         center: initialCoords,
-        zoom: 8,
+        zoom: 15, // Aumentado el zoom para ver mejor la ubicación
+    });
+
+    // Marcador para el Parque Universal
+    new google.maps.Marker({
+        position: initialCoords,
+        map: map,
+        title: 'Parque Universal de Rick y Morty',
     });
 
     const locationButton = document.getElementById('get-location');
